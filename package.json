@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Building a Image Processing API Backend",
   "main": "index.ts",
+  "jest":{ "moduleFileExtensions": [
+    "js",
+    "tsx",
+    "json"
+  ]},
   "scripts": {
     "build": "npx tsc",
     "typescript": "nodemon ./src/index.ts",

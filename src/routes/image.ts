@@ -13,12 +13,14 @@ images.get('/', async (req: express.Request, res: express.Response) => {
         if (data !== null && data !== undefined) {
             const stream :ReadStream= createReadStream(await data)
             return stream.on('open', function () {
+                res.statusCode = 200;
                 res.set('Content-Type', contentType)
                 stream.pipe(res)
             })
         }
         //there will data be null. So the user has given a wrong query
         else {
+            res.statusCode = 404;
             res.send(`please choose from the filenames below and specify it as shown in the example <br>
        ${(await File.getAvailableNamesFromFolder()).splice(1, 4, '')}<br>
        or use the right query segments like this: <br>

@@ -16,6 +16,7 @@ export default class File {
     static getAvailableNamesFromFolder = async () => {
         const readDirectory = await fs.readdir(File.filepath)
         const name = readDirectory.map((filename) => filename.split('.')[0])
+        name.filter(res => res !== "thumbs");
 
         return name
     }
