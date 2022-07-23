@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import express from 'express'
-import { createReadStream } from 'fs'
+import { createReadStream, ReadStream } from 'fs'
 import File from '../fileService'
 
 const contentType = 'image/jpeg'
@@ -11,7 +11,7 @@ images.get('/', async (req: express.Request, res: express.Response) => {
         const data: string | null | void = await File.getImage(req.query)
         //if data is not null so the image will be in the images folder so we can handle it
         if (data !== null && data !== undefined) {
-            const stream = createReadStream(await data)
+            const stream :ReadStream= createReadStream(await data)
             return stream.on('open', function () {
                 res.set('Content-Type', contentType)
                 stream.pipe(res)
