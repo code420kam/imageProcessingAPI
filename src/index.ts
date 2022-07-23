@@ -2,7 +2,7 @@ import { Application } from "express";
 import route from "./routes/indexRouting";
 import express from "express";
 
-var app: Application = express();
+const app: Application = express();
 const port = 3000;
 
  app.use(route);

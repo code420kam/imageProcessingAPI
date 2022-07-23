@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import route from "./routes/indexRouting";
 import express from "express";
-var app = express();
+const app = express();
 const port = 3000;
 app.use(route);
 const server = app.listen(port, function () {
