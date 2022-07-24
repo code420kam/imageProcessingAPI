@@ -9,14 +9,13 @@ interface Image {
 }
 
 export default class File {
-    static filepath = path.resolve('./images/')
-    static thumbPath = path.resolve('./images/thumbs/')
+    static filepath = path.resolve(__dirname,'../images/')
+    static thumbPath = path.resolve(__dirname,'../images/thumbs/')
 
     //getting full filenames from folder
-    static getAvailableNamesFromFolder = async () => {
+    static getAvailableNamesFromFolder = async ():Promise<string[]> => {
         const readDirectory = await fs.readdir(File.filepath)
         const name = readDirectory.map((filename) => filename.split('.')[0])
-        name.filter(res => res !== "thumbs");
 
         return name
     }
@@ -26,7 +25,7 @@ export default class File {
             return true
         } else return false
     }
-
+    
     static async isThumbAvailable(reqFile: Image):Promise<boolean> {
         const pathLike = path.resolve(this.thumbPath, `${reqFile.filename}-${reqFile.height}x${reqFile.width}`);
         //checking if path of requested thumb is available. If it's available so return true if not return false.

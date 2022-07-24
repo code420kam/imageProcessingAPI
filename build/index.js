@@ -18,7 +18,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.use(indexRouting_1.default);
-var server = app.listen(port, function () {
+const server = app.listen(port, function () {
     // console.log(`Server listen to port ${port}`);
 });
 const closeServer = () => __awaiter(void 0, void 0, void 0, function* () { return yield server.close(); });

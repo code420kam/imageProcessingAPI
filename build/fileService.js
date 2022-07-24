@@ -40,13 +40,12 @@ class File {
 }
 exports.default = File;
 _a = File;
-File.filepath = path_1.default.resolve('./images/');
-File.thumbPath = path_1.default.resolve('./images/thumbs/');
+File.filepath = path_1.default.resolve(__dirname, '../images/');
+File.thumbPath = path_1.default.resolve(__dirname, '../images/thumbs/');
 //getting full filenames from folder
 File.getAvailableNamesFromFolder = () => __awaiter(void 0, void 0, void 0, function* () {
     const readDirectory = yield fs_1.promises.readdir(File.filepath);
     const name = readDirectory.map((filename) => filename.split('.')[0]);
-    name.filter(res => res !== "thumbs");
     return name;
 });
 File.getImage = (reqFile) => __awaiter(void 0, void 0, void 0, function* () {

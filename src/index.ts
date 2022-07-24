@@ -6,7 +6,7 @@ const app: Application = express();
 const port = 3000;
 
  app.use(route);
-var server = app.listen(port, function() {
+const server = app.listen(port, function() {
     // console.log(`Server listen to port ${port}`);
 });
 export const closeServer = async () => await server.close();
