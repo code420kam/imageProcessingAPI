@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Building a Image Processing API Backend",
   "main": "index.ts",
-  "jest":{ "moduleFileExtensions": [
-    "js",
-    "tsx",
-    "json"
-  ]},
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "tsx",
+      "json"
+    ]
+  },
   "scripts": {
     "build": "npx tsc",
     "typescript": "nodemon ./src/index.ts",
@@ -23,7 +25,8 @@
     "@babel/preset-env": "^7.18.9",
     "@types/supertest": "^2.0.12",
     "express": "^4.18.1",
-    "jest": "^28.1.3"
+    "jest": "^28.1.3",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
